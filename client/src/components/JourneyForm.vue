@@ -20,6 +20,7 @@ export default {
         }
     },
     computed: {
+        // selectedDestinationName is only the name - this function will retrieve the full Object
         selectedDestination: function () {
             return this.destinations.find(destination => destination.englishName === this.selectedDestinationName);
         }
