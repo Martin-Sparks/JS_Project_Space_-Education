@@ -6,6 +6,10 @@
             <datalist id="destinations">
                 <option v-for="(destination, index) in destinations" :key="index" :value="destination.englishName">{{ destination.englishName }}</option>
             </datalist>
+            <div v-if="selectedDestinationName">
+                <p>{{ selectedDestination.englishName }}</p>
+                <input type="submit" value="Add to Journey" />
+            </div>
         </form>
     </div>
 </template>
