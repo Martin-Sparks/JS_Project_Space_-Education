@@ -8,6 +8,7 @@
             </datalist>
             <div v-if="selectedDestinationName">
                 <p>{{ selectedDestination.englishName }}</p>
+                <p>Learn more by taking a journey to visit this destination.</p>
                 <input type="submit" value="Add to Journey"/>
             </div>
         </form>
