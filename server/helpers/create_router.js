@@ -3,10 +3,10 @@ const ObjectID = require("mongodb").ObjectID;
 
 const createRouter = function (collection) {
   const router = express.Router();
-
+  
   // INDEX
   router.get("/", (req, res) => {
-    collection
+      collection
       .find()
       .toArray()
       .then((docs) => res.json(docs))
@@ -24,14 +24,27 @@ const createRouter = function (collection) {
       .then((result) => {
           res.json(result.ops[0])
         })
-     .catch(err => {
-        error(err);
-        res.status(500);
-        res.json({status: 500, error: err});
-    });
-});
+      .catch(err => {
+          error(err);
+          res.status(500);
+          res.json({status: 500, error: err});
+      });
+  });
 
-return router;
+  // DESTROY
+  router.delete('/:id', (req, res) => {
+      const id = req.params.id;
+      collection
+        .deleteOne({ _id: ObjectID(id) })
+        .then(result => res.json(result))
+        .catch((err) => {
+            console.error(err);
+            res.status(500);
+            res.json({ status: 500, error: err });
+        });
+  });
+
+  return router;
 
 };
 
