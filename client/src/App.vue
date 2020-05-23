@@ -1,27 +1,30 @@
 <template>
   <div id="app">
     <h1>Journey Around the Solar System</h1>
-    <journey-form :destinations="destinations"></journey-form>
+    <journey-form :all_destinations="all_destinations"/>
+    <journey-display />
   </div>
 </template>
 
 <script>
 import JourneyForm from "@/components/JourneyForm.vue"
+import JourneyDisplay from "@/components/JourneyDisplay.vue"
 
 export default {
   name: "app",
   data: function() {
     return {
-      destinations: []
+      all_destinations: []
     };
   },
   mounted: function() {
     fetch("https://api.le-systeme-solaire.net/rest/bodies/")
       .then(res => res.json())
-      .then(data => (this.destinations = data.bodies));
+      .then(data => (this.all_destinations = data.bodies));
   },
   components: {
-    "journey-form": JourneyForm
+    "journey-form": JourneyForm,
+    "journey-display": JourneyDisplay
   }
 };
 </script>
