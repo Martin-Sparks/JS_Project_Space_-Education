@@ -41,7 +41,7 @@ export default {
             }
         },
         filterPlanets: function () {
-            return this.all_destinations.filter(destination => destination.isPlanet && destination.englishName != this.currentLocationName);
+            return this.all_destinations.filter(destination => destination.isPlanet && destination.englishName != this.currentLocationName && this.hasDetails(destination));
         },
         currentLocation: function () {
             return this.all_destinations.find(destination => destination.englishName === this.currentLocationName);
@@ -58,11 +58,14 @@ export default {
             eventBus.$emit('addToJourney', { api: this.selectedDestination, db: this.selectedDestinationDetails, distance: this.distanceToDestination });
             this.currentLocationName = this.selectedDestinationName;
             this.selectedDestinationName = "";
+        },
+        hasDetails: function (destination) {
+            return this.details.some(details => details.api_id === destination.id);
         }
     }
 }
 </script>
 
 <style>
-
+        
 </style>
