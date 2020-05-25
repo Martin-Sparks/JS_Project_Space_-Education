@@ -13,14 +13,14 @@
 <script>
 export default {
     name: "destination-details",
-    props: ["destination", "further_details"],
+    props: ["destination"],
     data: function(){
         return{
             englishName: this.destination.englishName,
             density: this.destination.density,
             gravity: this.destination.gravity,
             discoveredBy: this.destination.discoveredBy,
-            discoveryDate: this.destination.discoveryDate
+            discoveryDate: this.destination.discoveryDate,
         }
     }
 
