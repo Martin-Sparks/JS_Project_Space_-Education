@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Journey Around the Solar System</h1>
-    <journey-form :all_destinations="all_destinations"/>
+    <journey-form :all_destinations="all_destinations" :details="details"/>
     <journey-display />
   </div>
 </template>

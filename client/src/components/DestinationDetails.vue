@@ -6,6 +6,7 @@
             <li>Gravity: {{gravity}}</li>
             <li v-if="discoveredBy">Discovered by: {{discoveredBy}}</li>
             <li v-if="discoveryDate">Discovery date: {{discoveryDate}}</li>
+            <li v-if="mythology">Mythology: {{mythology}}</li>
         </ul>
     </div>
 </template>
@@ -16,14 +17,14 @@ export default {
     props: ["destination"],
     data: function(){
         return{
-            englishName: this.destination.englishName,
-            density: this.destination.density,
-            gravity: this.destination.gravity,
-            discoveredBy: this.destination.discoveredBy,
-            discoveryDate: this.destination.discoveryDate,
+            englishName: this.destination.api.englishName,
+            density: this.destination.api.density,
+            gravity: this.destination.api.gravity,
+            discoveredBy: this.destination.api.discoveredBy,
+            discoveryDate: this.destination.api.discoveryDate,
+            mythology: this.destination.db.mythology
         }
     }
-
 }
 </script>
 
