@@ -13,7 +13,7 @@
 <script>
 export default {
     name: "destination-details",
-    props: ["destination"],
+    props: ["destination", "further_details"],
     data: function(){
         return{
             englishName: this.destination.englishName,
