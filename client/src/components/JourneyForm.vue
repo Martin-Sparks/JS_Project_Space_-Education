@@ -12,12 +12,14 @@
                 <input type="submit" value="Add to Journey"/>
             </div>
         </form>
+        <location-photos :currentLocation="currentLocation"></location-photos>
     </div>
 </template>
 
 <script>
 import { eventBus } from '@/main.js'
 
+import LocationPhotos from "@/components/LocationPhotos.vue"
 
 export default {
     name: 'journey-form',
@@ -62,6 +64,9 @@ export default {
         hasDetails: function (destination) {
             return this.details.some(details => details.api_id === destination.id);
         }
+    },
+    components: {
+        "location-photos": LocationPhotos
     }
 }
 </script>
