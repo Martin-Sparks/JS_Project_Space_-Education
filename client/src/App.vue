@@ -30,8 +30,7 @@ export default {
     fetch("https://api.le-systeme-solaire.net/rest/bodies/")
       .then(res => res.json())
       .then(data => (this.all_destinations = data.bodies));
-      
-      
+    
   },
   components: {
     "journey-form": JourneyForm,

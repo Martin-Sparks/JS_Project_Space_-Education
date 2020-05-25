@@ -1,14 +1,14 @@
 <template>
     <div>
+        <p>You are currently on {{currentLocationName}}.</p>
         <form v-on:submit.prevent="handleSubmit">
-            <label for="selected">Select a destination: </label>
-            <input type="text" name="selected" id="selected" list="destinations" v-model="selectedDestinationName" />
-            <datalist id="destinations">
-                <option v-for="(destination, index) in all_destinations" :key="index" :value="destination.englishName">{{ destination.englishName }}</option>
-            </datalist>
+            <label for="select">Select a destination: </label>
+            <select id="select" v-model="selectedDestinationName">
+                <option v-for="(destination, index) in filterPlanets" :key="index" :value="destination.englishName">{{ destination.englishName }}</option>
+            </select>
             <div v-if="selectedDestination">
-                <p>{{ selectedDestination.englishName }}</p>
-                <p>Learn more by taking a journey to visit this destination.</p>
+                <p>{{ selectedDestination.englishName }} is {{ distanceToDestination }} kilometers away.</p>
+                <p>Learn more by taking a journey to visit this destination.</p> 
                 <input type="submit" value="Add to Journey"/>
             </div>
         </form>
@@ -24,6 +24,7 @@ export default {
     props: ['all_destinations', 'details'],
     data: function () {
         return {
+            currentLocationName: "Earth",
             selectedDestinationName: ""
         }
     },
@@ -38,11 +39,24 @@ export default {
             if (this.selectedDestination) {
                 return this.details.find(destination => destination.api_id === this.selectedDestination.id );
             }
+        },
+        filterPlanets: function () {
+            return this.all_destinations.filter(destination => destination.isPlanet && destination.englishName != this.currentLocationName);
+        },
+        currentLocation: function () {
+            return this.all_destinations.find(destination => destination.englishName === this.currentLocationName);
+        },
+        currentLocationDetails: function () {
+            return this.details.find(destination => destination.api_id === this.currentLocation.id );
+        },
+        distanceToDestination: function () {
+            return this.currentLocationDetails.distance_to[this.selectedDestination.id];
         }
     },
     methods: {
         handleSubmit: function() {
-            eventBus.$emit('addToJourney', { api: this.selectedDestination, db: this.selectedDestinationDetails });
+            eventBus.$emit('addToJourney', { api: this.selectedDestination, db: this.selectedDestinationDetails, distance: this.distanceToDestination });
+            this.currentLocationName = this.selectedDestinationName;
             this.selectedDestinationName = "";
         }
     }
