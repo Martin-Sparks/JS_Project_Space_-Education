@@ -7,7 +7,7 @@
                 <option v-for="(destination, index) in filterPlanets" :key="index" :value="destination.englishName">{{ destination.englishName }}</option>
             </select>
             <div v-if="selectedDestination">
-                <p>{{ selectedDestination.englishName }} is {{ distanceToDestination }} kilometers away.</p>
+                <p>{{ selectedDestination.englishName }} is {{ distanceToDestination | format_km }} away.</p>
                 <p>Learn more by taking a journey to visit this destination.</p> 
                 <input type="submit" value="Add to Journey"/>
             </div>
