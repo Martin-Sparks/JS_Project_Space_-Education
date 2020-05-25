@@ -21,8 +21,14 @@ export default {
             density: this.destination.api.density,
             gravity: this.destination.api.gravity,
             discoveredBy: this.destination.api.discoveredBy,
-            discoveryDate: this.destination.api.discoveryDate,
-            mythology: this.destination.db.mythology
+            discoveryDate: this.destination.api.discoveryDate
+        }
+    },
+    computed: {
+        mythology: function () {
+            if (this.destination.db) {
+                return this.destination.db.mythology;
+            }
         }
     }
 }

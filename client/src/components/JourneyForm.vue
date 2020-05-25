@@ -41,7 +41,7 @@ export default {
         }
     },
     methods: {
-        handleSubmit: function(){
+        handleSubmit: function() {
             eventBus.$emit('addToJourney', { api: this.selectedDestination, db: this.selectedDestinationDetails });
             this.selectedDestinationName = "";
         }
