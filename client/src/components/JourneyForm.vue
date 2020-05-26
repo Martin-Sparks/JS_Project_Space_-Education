@@ -29,9 +29,9 @@
         <p>Learn more by taking a journey to visit this destination.</p>
       </div>
 
-      <div id="photos-grid">
+      <!-- <div id="photos-grid">
         <location-photos :currentLocation="currentLocation"></location-photos>
-      </div>
+      </div> -->
     </div>
     <div class="fuel">
       <fuel-gauge :fuel="fuel"></fuel-gauge>

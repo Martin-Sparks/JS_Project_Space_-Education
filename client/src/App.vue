@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="appbody">
     <section class="showcase">
       <div class="video-container">
         <video
@@ -29,7 +29,7 @@
 import JourneyForm from "@/components/JourneyForm.vue";
 import JourneyDisplay from "@/components/JourneyDisplay.vue";
 
-export default {
+export default { 
   name: "app",
   data: function() {
     return {
@@ -58,6 +58,11 @@ export default {
 </script>
 
 <style>
+
+#appbody {
+font-family: 'Roboto', sans-serif;
+}
+
 #app {
 
 }
@@ -82,6 +87,7 @@ body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.5;
   background-color: black;
+  background-attachment: fixed;
 }
 
 a {
@@ -115,6 +121,7 @@ h1 {
   overflow: hidden;
   /* background: var(--primary-color) url('./https://traversymedia.com/downloads/cover.jpg') no-repeat center
 		center/cover; */
+  background-attachment: fixed;
 }
 
 .video-container video {
@@ -154,6 +161,7 @@ h1 {
 }
 
 .header {
+  font-family: 'Montserrat', sans-serif;
   z-index: 1;
   position: relative;
   bottom: 680px;
