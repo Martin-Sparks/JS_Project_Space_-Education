@@ -19,7 +19,7 @@ db.details.insertMany([
             neptune: 4495000000,
             pluton: 5906380000
         },
-        photo: ""
+        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
     },
     {
         api_id: "mercure",
@@ -38,7 +38,7 @@ db.details.insertMany([
             neptune: 4443090000,
             pluton: 5848470000
         },
-        photo: ""
+        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
     },
     {
         api_id: "venus",
@@ -57,8 +57,8 @@ db.details.insertMany([
             neptune: 4392800000,
             pluton: 5798180000
         },
-        photo: ""
-    },
+        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        },
     {
         api_id: "terre",
         englishName: "Earth",
@@ -76,8 +76,8 @@ db.details.insertMany([
             neptune: 4351400000,
             pluton: 5756780000,
         },
-        photo: ""
-    },
+        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        },
     {
         api_id: "mars",
         englishName: "Mars",
@@ -95,8 +95,8 @@ db.details.insertMany([
             neptune: 4273060000,
             pluton: 5678480000
         },
-        photo: ""
-    },
+        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        },
     {
         api_id: "jupiter",
         englishName: "Jupiter",
@@ -114,8 +114,8 @@ db.details.insertMany([
             neptune: 3722670000,
             pluton: 5127880000
         },
-        photo: ""
-    },
+        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        },
     {
         api_id: "saturne",
         englishName: "Saturn",
@@ -133,8 +133,8 @@ db.details.insertMany([
             neptune: 3076400000,
             pluton: 4472380000
         },
-        photo: ""
-    },
+        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        },
     {
         api_id: "uranus",
         englishName: "Uranus",
@@ -152,8 +152,8 @@ db.details.insertMany([
             neptune: 1627450000,
             pluton: 3035380000
         },
-        photo: ""
-    },
+        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        },
     {
         api_id: "neptune",
         englishName: "Neptune",
@@ -171,8 +171,8 @@ db.details.insertMany([
             uranus: 1627450000,
             pluton: 141138000
         },
-        photo: ""
-    },
+        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        },
     {
         api_id: "pluton",
         englishName: "Pluto",
@@ -190,8 +190,8 @@ db.details.insertMany([
             uranus: 3035380000,
             neptune: 141138000
         },
-        photo: ""
-    }
+        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        }
 ]);
 
 
