@@ -6,6 +6,7 @@
             <li>Gravity: {{gravity}}</li>
             <li v-if="discoveredBy">Discovered by: {{discoveredBy}}</li>
             <li v-if="discoveryDate">Discovery date: {{discoveryDate}}</li>
+            <li v-if="description">Description: {{description}}</li>
             <li v-if="mythology">Mythology: {{mythology}}</li>
         </ul>
     </div>
@@ -25,6 +26,12 @@ export default {
         }
     },
     computed: {
+        description: function () {
+            if (this.destination.db) {
+                return this.destination.db.description;
+            }
+        },
+
         mythology: function () {
             if (this.destination.db) {
                 return this.destination.db.mythology;

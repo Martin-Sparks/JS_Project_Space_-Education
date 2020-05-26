@@ -2,7 +2,12 @@
   <div>
     <section class="showcase">
       <div class="video-container">
-        <video src="https://traversymedia.com/downloads/video.mov" autoplay muted loop></video>
+        <video
+          src="https://traversymedia.com/downloads/video.mov"
+          autoplay
+          muted
+          loop
+        ></video>
       </div>
     </section>
 
@@ -29,32 +34,32 @@ export default {
   data: function() {
     return {
       all_destinations: [],
-      details: []
+      details: [],
     };
   },
   methods: {
     fetchData() {
       fetch("http://localhost:3000/api/details")
-        .then(response => response.json())
-        .then(details => (this.details = details));
-    }
+        .then((response) => response.json())
+        .then((details) => (this.details = details));
+    },
   },
   mounted: function() {
     this.fetchData();
     fetch("https://api.le-systeme-solaire.net/rest/bodies/")
-      .then(res => res.json())
-      .then(data => (this.all_destinations = data.bodies));
+      .then((res) => res.json())
+      .then((data) => (this.all_destinations = data.bodies));
   },
   components: {
     "journey-form": JourneyForm,
-    "journey-display": JourneyDisplay
-  }
+    "journey-display": JourneyDisplay,
+  },
 };
 </script>
 
 <style>
 #app {
-  border: 10px solid green;
+
 }
 
 #JD {
@@ -76,6 +81,7 @@ export default {
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.5;
+  background-color: black;
 }
 
 a {

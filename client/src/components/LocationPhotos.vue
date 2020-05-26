@@ -1,7 +1,7 @@
 <template>
   <div id="photo-section">
     <div v-for=" (photo, index) in mappedPhotos" :key="index" :value="photo" id="photo">
-      <img :src="photo" />
+      <img :src="photo"/>
     </div>
   </div>
 </template>
@@ -31,7 +31,7 @@ export default {
         if (links) {
           return links[0].href;
         }
-      }).slice(0, 9);
+      }).slice(0, 3);
     }
   },
   mounted: function() {
