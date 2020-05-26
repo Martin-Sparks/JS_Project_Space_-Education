@@ -1,9 +1,9 @@
 <template>
-  <div> 
-    <div v-for=" (photo, index) in mappedPhotos" :key="index" :value="photo" >
+  <div id="photo-section">
+    <div v-for=" (photo, index) in mappedPhotos" :key="index" :value="photo" id="photo">
       <img :src="photo" />
     </div>
-  </div> 
+  </div>
 </template>
 
 <script>
@@ -27,7 +27,7 @@ export default {
 
   computed: {
     mappedPhotos: function() {
-      return this.photos.map(photo => photo.links[0].href).slice(0,9);
+      return this.photos.map(photo => photo.links[0].href).slice(0, 9);
     }
   },
 
@@ -40,4 +40,25 @@ export default {
 </script>
 
 <style>
+#photo-section {
+  border: 3px solid blue;
+  
+  display: flex;
+ 
+  flex-wrap: wrap;
+    align-items: center;
+  justify-content: center;
+}
+
+#photo {
+}
+
+img {
+  margin: 0px;
+  padding: 0px;
+  height: 200px;
+  
+}
 </style>
+
+   
