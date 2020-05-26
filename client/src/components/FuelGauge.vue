@@ -1,7 +1,7 @@
 <template lang="html">
     <div>
         <GChart
-            :settings="{ packages: ['gauge'] }"
+            :settings="{ packages: ['corechart', 'gauge'] }"
             type="Gauge"
             :data="chartData"
             :options="chartOptions"
@@ -18,10 +18,12 @@ export default {
     data: function () {
         return {
             chartOptions: {
-                chart: {
-                    title: 'Company Performance',
-                    subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-                }
+                redFrom: 0,
+                redTo: 25,
+                yellowFrom: 25,
+                yellowTo: 75,
+                minorTicks: 10,
+                max: 500
             }
         }
     },
