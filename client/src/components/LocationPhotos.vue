@@ -41,12 +41,12 @@ export default {
 
 <style>
 #photo-section {
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
   
   display: flex;
  
   flex-wrap: wrap;
-    align-items: center;
+  align-items: center;
   justify-content: center;
 }
 

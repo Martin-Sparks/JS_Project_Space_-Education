@@ -1,12 +1,13 @@
 <template>
   <div>
     <div id="test">
-            <div>
-            <p>You are currently on {{currentLocationName}}.</p>
-            </div>
-            
-      <form v-on:submit.prevent="handleSubmit">
-        <label for="select">Select a destination:</label>
+      <div class="top-info" id="top-info">
+        <p>You are currently on {{currentLocationName}}.</p>
+      </div>
+
+      <form v-on:submit.prevent="handleSubmit" class="top-info" id="top-info">
+        <!-- Drop down selection box -->
+        <label for="select">Select a destination: </label>
         <select id="select" v-model="selectedDestinationName">
           <option
             v-for="(destination, index) in filterPlanets"
@@ -14,20 +15,19 @@
             :value="destination.englishName"
           >{{ destination.englishName }}</option>
         </select>
-         <input type="submit" value="Add to Journey" />
-            
-
+        <!-- Button-->
+        <input class="btn" type="submit" value="Add to Journey" />
       </form>
 
-                  <!-- below provides further details -->
-            <div v-if="selectedDestination">
-                <p>{{ selectedDestination.englishName }} is {{ distanceToDestination | format_km }} away.</p>
-                <p>Learn more by taking a journey to visit this destination.</p>
-            </div>
-    
-        <div id="photos-grid">
-            <location-photos :currentLocation="currentLocation"></location-photos>
-        </div>
+      <!-- below provides further details -->
+      <div v-if="selectedDestination" class="info-box">
+        <p>{{ selectedDestination.englishName }} is {{ distanceToDestination | format_km }} away.</p>
+        <p>Learn more by taking a journey to visit this destination.</p>
+      </div>
+
+      <div id="photos-grid">
+        <location-photos :currentLocation="currentLocation"></location-photos>
+      </div>
     </div>
   </div>
 </template>
@@ -108,7 +108,57 @@ export default {
 </script>
 
 <style>
-    #test{
-        border: 10px blueviolet solid;
-    }
+#test {
+}
+
+.top-info .background {
+  background-color: black;
+  opacity: 35%;
+  /* background: rgba(0, 0, 0, 0.6); */
+}
+
+#top-info {
+  color: white;
+  opacity: 100%;
+  background-color: none;
+  display: inline-flex;
+  margin: 20px;
+
+}
+
+.info-box {
+  background-color: salmon;
+  
+}
+
+.btn {
+  display: inline-block;
+  padding: 20px 30px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 5px;
+  border: solid #fff 1px;
+  opacity: 30%;
+  position: relative;
+  bottom: 30px;
+  left: 20px;
+  
+}
+
+#select {
+  position: relative;
+  display: inline-block;
+  background-color: black;
+  opacity: 30%;
+  min-width: 160px;
+  max-height: 40px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 10px 10px;
+  margin: -4px 5px 0px 10px;
+  border-radius: 5px;
+
+
+  /* z-index: 1; */
+}
+
 </style>
