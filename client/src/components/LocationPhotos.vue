@@ -31,7 +31,7 @@ export default {
         if (links) {
           return links[0].href;
         }
-      }).slice(0, 9);
+      }).slice(0, 3);
     }
   },
   mounted: function() {

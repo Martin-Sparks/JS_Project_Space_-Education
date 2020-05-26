@@ -170,7 +170,7 @@ export default {
   max-height: 40px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 10px 10px;
-  margin: -4px 5px 0px 10px;
+  margin: -6px 5px 0px 10px;
   border-radius: 5px;
 
 
