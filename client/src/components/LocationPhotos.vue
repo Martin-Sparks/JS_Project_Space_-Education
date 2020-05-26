@@ -1,8 +1,9 @@
 <template>
   <div id="photo-section">
-    <div v-for=" (photo, index) in mappedPhotos" :key="index" :value="photo" id="photo">
-      <img :src="photo"/>
-    </div>
+    <img :src="randomPhoto" />
+    <!-- <div v-for=" (photo, index) in mappedPhotos" :key="index" :value="photo" id="photo">
+      <img :src="photo" />
+    </div> -->
   </div>
 </template>
 
@@ -31,7 +32,10 @@ export default {
         if (links) {
           return links[0].href;
         }
-      }).slice(0, 3);
+      });
+    },
+    randomPhoto: function() {
+      return this.mappedPhotos[Math.floor(Math.random() * this.mappedPhotos.length)];
     }
   },
   mounted: function() {
