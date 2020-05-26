@@ -19,7 +19,7 @@ db.details.insertMany([
             neptune: 4495000000,
             pluton: 5906380000
         },
-        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        photo: "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001435/GSFC_20171208_Archive_e001435~orig.jpg"
     },
     {
         api_id: "mercure",
@@ -38,7 +38,7 @@ db.details.insertMany([
             neptune: 4443090000,
             pluton: 5848470000
         },
-        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        photo: "https://images-assets.nasa.gov/image/PIA13840/PIA13840~orig.jpg"
     },
     {
         api_id: "venus",
@@ -57,7 +57,7 @@ db.details.insertMany([
             neptune: 4392800000,
             pluton: 5798180000
         },
-        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        photo: "https://images-assets.nasa.gov/image/PIA00111/PIA00111~orig.jpg"
         },
     {
         api_id: "terre",
@@ -76,7 +76,7 @@ db.details.insertMany([
             neptune: 4351400000,
             pluton: 5756780000,
         },
-        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        photo: "https://images-assets.nasa.gov/image/PIA00122/PIA00122~orig.jpg"
         },
     {
         api_id: "mars",
@@ -95,7 +95,7 @@ db.details.insertMany([
             neptune: 4273060000,
             pluton: 5678480000
         },
-        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        photo: "https://images-assets.nasa.gov/image/PIA00407/PIA00407~orig.jpg"
         },
     {
         api_id: "jupiter",
@@ -114,7 +114,7 @@ db.details.insertMany([
             neptune: 3722670000,
             pluton: 5127880000
         },
-        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        photo: "https://images-assets.nasa.gov/image/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~orig.jpg"
         },
     {
         api_id: "saturne",
@@ -133,7 +133,7 @@ db.details.insertMany([
             neptune: 3076400000,
             pluton: 4472380000
         },
-        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        photo: "https://images-assets.nasa.gov/image/PIA02225/PIA02225~orig.jpg"
         },
     {
         api_id: "uranus",
@@ -152,7 +152,7 @@ db.details.insertMany([
             neptune: 1627450000,
             pluton: 3035380000
         },
-        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        photo: "https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg"
         },
     {
         api_id: "neptune",
@@ -171,7 +171,7 @@ db.details.insertMany([
             uranus: 1627450000,
             pluton: 141138000
         },
-        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        photo: "https://images-assets.nasa.gov/image/PIA01142/PIA01142~orig.jpg"
         },
     {
         api_id: "pluton",
@@ -190,7 +190,7 @@ db.details.insertMany([
             uranus: 3035380000,
             neptune: 141138000
         },
-        photo: "https://images-assets.nasa.gov/image/PIA11132/PIA11132~orig.jpg"
+        photo: "https://images-assets.nasa.gov/image/PIA09113/PIA09113~orig.jpg"
         }
 ]);
 
