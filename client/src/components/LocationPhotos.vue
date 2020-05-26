@@ -24,7 +24,6 @@ export default {
         .then(photos => (this.photos = photos.collection.items));
     }
   },
-
   computed: {
     mappedPhotos: function() {
       return this.photos.map(photo => {
@@ -35,7 +34,6 @@ export default {
       }).slice(0, 9);
     }
   },
-
   mounted: function() {
     eventBus.$on("addToJourney", destination =>
       this.fetchPhotos(destination.api.englishName)
