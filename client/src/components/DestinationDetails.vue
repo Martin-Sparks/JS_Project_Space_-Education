@@ -54,6 +54,7 @@ export default {
   display: flex;
   background-color: #ffffff66;
   align-items: center;
+  margin: 20px;
 }
 
 ul {
@@ -61,8 +62,10 @@ ul {
 }
 
 img {
-  /* padding: 5px; */
   margin: 20px;
+  max-width: 300px;
+  width: auto;
+  height: auto;
 }
 
 #text {
@@ -71,8 +74,7 @@ img {
 
 span {
   font-weight: bolder;
-  font-style: italic; 
+  font-style: italic;
   text-decoration: underline;
-  
 }
 </style>

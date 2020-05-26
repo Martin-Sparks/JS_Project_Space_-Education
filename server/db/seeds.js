@@ -190,7 +190,7 @@ db.details.insertMany([
             uranus: 3035380000,
             neptune: 141138000
         },
-        photo: "https://images-assets.nasa.gov/image/PIA09113/PIA09113~orig.jpg"
+        photo: "https://images-assets.nasa.gov/image/PIA20291/PIA20291~orig.jpg"
         }
 ]);
 

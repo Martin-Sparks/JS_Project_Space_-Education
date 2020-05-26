@@ -51,4 +51,5 @@ export default {
 #distance {
     color: white;
 }
+
 </style>
