@@ -1,14 +1,18 @@
 <template>
   <div id="app">
-    <h1>Journey Around the Solar System</h1>
-    <journey-form :all_destinations="all_destinations" :details="details"/>
+    <div class="header">
+      <h1>Journey Around the Solar System</h1>
+    </div>
+    <journey-form id="journey-form" :all_destinations="all_destinations" :details="details" />
+    <div id="JD">
     <journey-display />
+    </div>
   </div>
 </template>
 
 <script>
-import JourneyForm from "@/components/JourneyForm.vue"
-import JourneyDisplay from "@/components/JourneyDisplay.vue"
+import JourneyForm from "@/components/JourneyForm.vue";
+import JourneyDisplay from "@/components/JourneyDisplay.vue";
 
 export default {
   name: "app",
@@ -21,8 +25,8 @@ export default {
   methods: {
     fetchData() {
       fetch("http://localhost:3000/api/details")
-      .then(response => response.json())
-      .then(details => this.details = details);
+        .then(response => response.json())
+        .then(details => (this.details = details));
     }
   },
   mounted: function() {
@@ -30,7 +34,6 @@ export default {
     fetch("https://api.le-systeme-solaire.net/rest/bodies/")
       .then(res => res.json())
       .then(data => (this.all_destinations = data.bodies));
-    
   },
   components: {
     "journey-form": JourneyForm,
@@ -40,4 +43,19 @@ export default {
 </script>
 
 <style>
+#app {
+  border: 10px solid green;
+}
+
+.header {
+  background-color: yellow;
+}
+
+#journey-form {
+  border: 10px black solid ;
+}
+
+#JD {
+  border: 10px blue solid;
+}
 </style>

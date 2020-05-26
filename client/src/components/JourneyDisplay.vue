@@ -31,5 +31,14 @@ export default {
 }
 </script>
 
+  
+
 <style>
+
+  #journeyDisplay {
+      border: 20px solid red;
+        
+    }
+
+</style>
 
