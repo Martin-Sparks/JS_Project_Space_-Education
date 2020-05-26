@@ -25,9 +25,7 @@ export default {
             this.journey.push(destination);
             this.totalDistance += destination.distance;
         })
-        
     }
-
 }
 </script>
 
