@@ -24,13 +24,16 @@ export default {
         .then(photos => (this.photos = photos.collection.items));
     }
   },
-
   computed: {
     mappedPhotos: function() {
-      return this.photos.map(photo => photo.links[0].href).slice(0, 9);
+      return this.photos.map(photo => {
+        const links = photo.links
+        if (links) {
+          return links[0].href;
+        }
+      }).slice(0, 9);
     }
   },
-
   mounted: function() {
     eventBus.$on("addToJourney", destination =>
       this.fetchPhotos(destination.api.englishName)

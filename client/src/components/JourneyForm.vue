@@ -29,6 +29,7 @@
         <location-photos :currentLocation="currentLocation"></location-photos>
       </div>
     </div>
+    <fuel-gauge :fuel="fuel"></fuel-gauge>
   </div>
 </template>
 
@@ -36,6 +37,7 @@
 import { eventBus } from "@/main.js";
 
 import LocationPhotos from "@/components/LocationPhotos.vue";
+import FuelGauge from "@/components/FuelGauge.vue";
 
 export default {
   name: "journey-form",
@@ -43,7 +45,8 @@ export default {
   data: function() {
     return {
       currentLocationName: "Earth",
-      selectedDestinationName: ""
+      selectedDestinationName: "",
+      fuel: 500
     };
   },
   computed: {
@@ -82,19 +85,30 @@ export default {
       );
     },
     distanceToDestination: function() {
-      return this.currentLocationDetails.distance_to[
-        this.selectedDestination.id
-      ];
+      if (this.selectedDestination) {  
+        return this.currentLocationDetails.distance_to[
+            this.selectedDestination.id
+        ];
+      }
+    },
+    fuelNeeded: function () {
+      if (this.selectedDestination) {  
+        // You can travel 100 million km on 1 unit of fuel
+        return Math.floor(this.distanceToDestination/100000000);
+      }
     }
   },
   methods: {
     handleSubmit: function() {
-      eventBus.$emit("addToJourney", {
-        api: this.selectedDestination,
-        db: this.selectedDestinationDetails,
-        distance: this.distanceToDestination
-      });
-      this.currentLocationName = this.selectedDestinationName;
+      if (this.fuelNeeded <= this.fuel) {
+        eventBus.$emit("addToJourney", {
+            api: this.selectedDestination,
+            db: this.selectedDestinationDetails,
+            distance: this.distanceToDestination
+        });
+        this.fuel -= this.fuelNeeded;
+        this.currentLocationName = this.selectedDestinationName;
+      }
       this.selectedDestinationName = "";
     },
     hasDetails: function(destination) {
@@ -102,13 +116,15 @@ export default {
     }
   },
   components: {
-    "location-photos": LocationPhotos
+    "location-photos": LocationPhotos,
+    "fuel-gauge": FuelGauge
   }
 };
 </script>
 
 <style>
 #test {
+    
 }
 
 .top-info .background {
