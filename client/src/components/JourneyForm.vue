@@ -27,6 +27,7 @@
             <location-photos :currentLocation="currentLocation"></location-photos>
         </div>
     </div>
+    <fuel-gauge :fuel="fuel"></fuel-gauge>
   </div>
 </template>
 
@@ -34,6 +35,7 @@
 import { eventBus } from "@/main.js";
 
 import LocationPhotos from "@/components/LocationPhotos.vue";
+import FuelGauge from "@/components/FuelGauge.vue";
 
 export default {
   name: "journey-form",
@@ -112,7 +114,8 @@ export default {
     }
   },
   components: {
-    "location-photos": LocationPhotos
+    "location-photos": LocationPhotos,
+    "fuel-gauge": FuelGauge
   }
 };
 </script>
