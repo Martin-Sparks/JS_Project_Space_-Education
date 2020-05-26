@@ -15,8 +15,6 @@
           >{{ destination.englishName }}</option>
         </select>
          <input type="submit" value="Add to Journey" />
-            
-
       </form>
 
                   <!-- below provides further details -->
@@ -43,7 +41,8 @@ export default {
   data: function() {
     return {
       currentLocationName: "Earth",
-      selectedDestinationName: ""
+      selectedDestinationName: "",
+      fuel: 500
     };
   },
   computed: {
@@ -82,19 +81,30 @@ export default {
       );
     },
     distanceToDestination: function() {
-      return this.currentLocationDetails.distance_to[
-        this.selectedDestination.id
-      ];
+      if (this.selectedDestination) {  
+        return this.currentLocationDetails.distance_to[
+            this.selectedDestination.id
+        ];
+      }
+    },
+    fuelNeeded: function () {
+      if (this.selectedDestination) {  
+        // You can travel 100 million km on 1 unit of fuel
+        return Math.floor(this.distanceToDestination/100000000);
+      }
     }
   },
   methods: {
     handleSubmit: function() {
-      eventBus.$emit("addToJourney", {
-        api: this.selectedDestination,
-        db: this.selectedDestinationDetails,
-        distance: this.distanceToDestination
-      });
-      this.currentLocationName = this.selectedDestinationName;
+      if (this.fuelNeeded <= this.fuel) {
+        eventBus.$emit("addToJourney", {
+            api: this.selectedDestination,
+            db: this.selectedDestinationDetails,
+            distance: this.distanceToDestination
+        });
+        this.fuel -= this.fuelNeeded;
+        this.currentLocationName = this.selectedDestinationName;
+      }
       this.selectedDestinationName = "";
     },
     hasDetails: function(destination) {
