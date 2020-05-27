@@ -1,9 +1,7 @@
 <template>
+<!-- Ultimately unused, as random photos selected from the API were not as relevant as we had hoped -->
   <div id="photo-section">
     <img :src="randomPhoto" />
-    <!-- <div v-for=" (photo, index) in mappedPhotos" :key="index" :value="photo" id="photo">
-      <img :src="photo" />
-    </div> -->
   </div>
 </template>
 
@@ -57,9 +55,6 @@ export default {
   justify-content: center;
 }
 
-#photo {
-  
-}
 
 img {
   margin: 0px;

@@ -23,7 +23,7 @@ export default {
                 yellowFrom: 25,
                 yellowTo: 75,
                 minorTicks: 10,
-                max: 500
+                max: 1000
             }
         }
     },

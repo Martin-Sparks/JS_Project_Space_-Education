@@ -24,14 +24,10 @@
       <div v-if="selectedDestination" class="info-box" id="info-box">
         <p>
           {{ selectedDestination.englishName }} is
-          {{ distanceToDestination | format_km }} away. 
+          {{ distanceToDestination | format_km }} away.
         </p>
-        <p> Learn more by taking a journey to visit this destination.</p>
+        <p>Learn more by taking a journey to visit this destination.</p>
       </div>
-
-      <!-- <div id="photos-grid">
-        <location-photos :currentLocation="currentLocation"></location-photos>
-      </div> -->
     </div>
     <div class="fuel">
       <fuel-gauge :fuel="fuel"></fuel-gauge>
@@ -41,8 +37,6 @@
 
 <script>
 import { eventBus } from "@/main.js";
-
-import LocationPhotos from "@/components/LocationPhotos.vue";
 import FuelGauge from "@/components/FuelGauge.vue";
 
 export default {
@@ -52,7 +46,7 @@ export default {
     return {
       currentLocationName: "Earth",
       selectedDestinationName: "",
-      fuel: 500,
+      fuel: 1000,
     };
   },
   computed: {
@@ -75,7 +69,6 @@ export default {
     filterPlanets: function() {
       return this.all_destinations.filter(
         (destination) =>
-          destination.isPlanet &&
           destination.englishName != this.currentLocationName &&
           this.hasDetails(destination)
       );
@@ -100,7 +93,7 @@ export default {
     fuelNeeded: function() {
       if (this.selectedDestination) {
         // You can travel 100 million km on 1 unit of fuel
-        return Math.floor(this.distanceToDestination / 100000000);
+        return Math.floor(this.distanceToDestination / 50000000);
       }
     },
   },
@@ -122,16 +115,12 @@ export default {
     },
   },
   components: {
-    "location-photos": LocationPhotos,
-    "fuel-gauge": FuelGauge,
+    "fuel-gauge": FuelGauge
   },
 };
 </script>
 
 <style>
-#test {
-}
-
 .top-info .background {
   background-color: black;
   opacity: 35%;
@@ -148,14 +137,12 @@ export default {
 .info-box .background {
   background-color: black;
   opacity: 35%;
-  
 }
 
 #info-box {
   color: white;
   opacity: 100%;
   background-color: none;
-
 }
 
 .btn {
