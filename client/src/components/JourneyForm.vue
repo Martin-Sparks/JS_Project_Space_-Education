@@ -1,18 +1,25 @@
 <template>
   <div>
+    <header>
+      <h1>Journey Around the Solar System</h1>
+    </header>
 
-    <form v-on:submit.prevent="handleSubmit" class="top-info" id="top-info">
-      <label for="select">Select a destination: </label>
-      <select id="select" v-model="selectedDestinationName">
-        <option
-          v-for="(destination, index) in filterPlanets"
-          :key="index"
-          :value="destination.englishName"
-          >{{ destination.englishName }}</option
-        >
-      </select>
-      <input class="btn" type="submit" value="Add to Journey" />
-    </form>
+    <div id="form">
+      <fuel-gauge :fuel="fuel"></fuel-gauge>
+      <form v-on:submit.prevent="handleSubmit" class="top-info" id="top-info">
+        
+        <label for="select">Select a destination: </label>
+        <select id="select" v-model="selectedDestinationName">
+          <option
+            v-for="(destination, index) in filterPlanets"
+            :key="index"
+            :value="destination.englishName"
+            >{{ destination.englishName }}</option
+          >
+        </select>
+        <input class="btn" type="submit" value="Add to Journey" />
+      </form>
+    </div>
 
     <div id="banner">
       <h2>
@@ -22,10 +29,6 @@
           {{ distanceToDestination | format_km }} away! 🚀
         </span>
       </h2>
-    </div>
-
-    <div class="fuel">
-      <fuel-gauge :fuel="fuel"></fuel-gauge>
     </div>
 
   </div>
@@ -117,6 +120,12 @@ export default {
 </script>
 
 <style>
+#form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .top-info .background {
   background-color: black;
   opacity: 35%;
@@ -170,15 +179,29 @@ export default {
 }
 
 .fuel {
-  position: fixed;
-  top: 10px;
+  /* position: relative; */
+  /* display: inline-block; */
+  /* bottom: 80px; */
   opacity: 70%;
   height: 30px;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 #banner {
   color: white;
   text-shadow: 4px 4px 3px #13131388;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  color: whitesmoke;
+  text-shadow: 4px 4px 3px #13131388;
+  font-weight: bolder;
 }
 </style>

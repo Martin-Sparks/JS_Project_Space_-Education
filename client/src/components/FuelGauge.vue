@@ -19,11 +19,13 @@ export default {
         return {
             chartOptions: {
                 redFrom: 0,
-                redTo: 25,
-                yellowFrom: 25,
-                yellowTo: 75,
+                redTo: 99,
+                yellowFrom: 100,
+                yellowTo: 250,
                 minorTicks: 10,
-                max: 1000
+                max: 1000,
+                height: 500,
+                width: 150
             }
         }
     },

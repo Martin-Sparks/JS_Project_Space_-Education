@@ -12,9 +12,9 @@
     </section>
 
     <div id="app">
-      <div class="header">
+      <!-- <div class="header">
         <h1>Journey Around the Solar System</h1>
-      </div>
+      </div> -->
       <div id="journey-form">
         <journey-form :all_destinations="all_destinations" :details="details" />
       </div>
@@ -104,7 +104,7 @@ h1 {
 }
 
 .video-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -149,20 +149,9 @@ h1 {
   opacity: 0.7;
 }
 
-.header {
-  font-family: "Montserrat", sans-serif;
-  z-index: 1;
-  position: relative;
-  bottom: 680px;
-  color: whitesmoke;
-  text-align: center;
-  text-shadow: 4px 4px 3px #13131388;
-  font-weight: bolder;
-}
-
 #journey-form {
   position: relative;
-  bottom: 680px;
+  bottom: 95vh;
   z-index: 1;
   text-align: center;
 }

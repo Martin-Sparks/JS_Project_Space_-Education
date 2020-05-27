@@ -13,12 +13,14 @@
         <li>
           <span class="label">Density: </span>{{ density }} grams per cubic cm
         </li>
-        <li><span class="label">Count Of Moons: </span>{{ moonCount }}</li>
+        <li v-if="moonCount">
+          <span class="label">Number Of Moons: </span>{{ moonCount }}
+        </li>
         <li v-if="discoveredBy">
-          <span class="label">Discovered by: </span>{{ discoveredBy }}
+          <span class="label">Discovered By: </span>{{ discoveredBy }}
         </li>
         <li v-if="discoveryDate">
-          <span class="label">Discovery date: </span>{{ discoveryDate }}
+          <span class="label">Discovery Date: </span>{{ discoveryDate }}
         </li>
         <li v-if="description">
           <span class="label">Description: </span>{{ description }}
@@ -45,7 +47,6 @@ export default {
       diameter: Math.floor(this.destination.api.meanRadius * 2),
       discoveredBy: this.destination.api.discoveredBy,
       discoveryDate: this.destination.api.discoveryDate,
-      moonCount: this.destination.api.moons.length,
     };
     console.log(this.moonCount);
   },
@@ -66,7 +67,12 @@ export default {
         return this.destination.db.symbol;
       }
     },
-  },
+    moonCount: function(){
+      if (this.destination.api.moons) {
+          return this.destination.api.moons.length;
+      }
+    }
+  }
 };
 </script>
 

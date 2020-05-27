@@ -38,7 +38,7 @@ export default {
   color: rgb(80, 69, 69);
   padding: 0;
   position: relative;
-  bottom: 700px;
+  bottom: 95vh;
   z-index: 2;
   margin: 40px;
   display: flex;
