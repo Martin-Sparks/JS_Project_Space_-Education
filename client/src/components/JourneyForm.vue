@@ -1,37 +1,33 @@
 <template>
   <div>
-    <div id="test">
-      <div class="top-info" id="top-info">
-        <p>You are currently on {{ currentLocationName }}.</p>
-      </div>
 
-      <form v-on:submit.prevent="handleSubmit" class="top-info" id="top-info">
-        <!-- Drop down selection box -->
-        <label for="select">Select a destination: </label>
-        <select id="select" v-model="selectedDestinationName">
-          <option
-            v-for="(destination, index) in filterPlanets"
-            :key="index"
-            :value="destination.englishName"
-            >{{ destination.englishName }}</option
-          >
-        </select>
-        <!-- Button-->
-        <input class="btn" type="submit" value="Add to Journey" />
-      </form>
+    <form v-on:submit.prevent="handleSubmit" class="top-info" id="top-info">
+      <label for="select">Select a destination: </label>
+      <select id="select" v-model="selectedDestinationName">
+        <option
+          v-for="(destination, index) in filterPlanets"
+          :key="index"
+          :value="destination.englishName"
+          >{{ destination.englishName }}</option
+        >
+      </select>
+      <input class="btn" type="submit" value="Add to Journey" />
+    </form>
 
-      <!-- below provides further details -->
-      <div v-if="selectedDestination" class="info-box" id="info-box">
-        <p>
+    <div id="banner">
+      <h2>
+        You are currently on {{ currentLocationName }}.
+        <span v-if="selectedDestination">
           {{ selectedDestination.englishName }} is
-          {{ distanceToDestination | format_km }} away.
-        </p>
-        <p>Learn more by taking a journey to visit this destination.</p>
-      </div>
+          {{ distanceToDestination | format_km }} away! 🚀
+        </span>
+      </h2>
     </div>
+
     <div class="fuel">
       <fuel-gauge :fuel="fuel"></fuel-gauge>
     </div>
+
   </div>
 </template>
 
@@ -115,7 +111,7 @@ export default {
     },
   },
   components: {
-    "fuel-gauge": FuelGauge
+    "fuel-gauge": FuelGauge,
   },
 };
 </script>
@@ -179,5 +175,10 @@ export default {
   opacity: 70%;
   height: 30px;
   z-index: -1;
+}
+
+#banner {
+  color: white;
+  text-shadow: 4px 4px 3px #13131388;
 }
 </style>

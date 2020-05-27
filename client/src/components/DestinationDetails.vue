@@ -1,18 +1,31 @@
 <template>
   <div id="info-box">
     <div id="text">
-      <h2>{{ englishName }}</h2>
+      <h2>{{ englishName }} - {{ symbol }}</h2>
       <ul>
-        <li><span>Density: </span>{{ density }}</li>
-        <li><span>Gravity: </span>{{ gravity }}</li>
+        <li>
+          <span class="label">Mean Diameter: </span>{{ diameter }} kilometers
+        </li>
+        <li>
+          <span class="label">Gravity: </span>{{ gravity }} m/s per second
+        </li>
+        <li><span class="label">Escape: </span>{{ escape }} m/s per second</li>
+        <li>
+          <span class="label">Density: </span>{{ density }} grams per cubic cm
+        </li>
+        <li><span class="label">Count Of Moons: </span>{{ moonCount }}</li>
         <li v-if="discoveredBy">
-          <span>Discovered by: </span>{{ discoveredBy }}
+          <span class="label">Discovered by: </span>{{ discoveredBy }}
         </li>
         <li v-if="discoveryDate">
-          <span>Discovery date: </span>{{ discoveryDate }}
+          <span class="label">Discovery date: </span>{{ discoveryDate }}
         </li>
-        <li v-if="description"><span>Description: </span>{{ description }}</li>
-        <li v-if="mythology"><span>Mythology: </span>{{ mythology }}</li>
+        <li v-if="description">
+          <span class="label">Description: </span>{{ description }}
+        </li>
+        <li v-if="mythology">
+          <span class="label">Mythology: </span>{{ mythology }}
+        </li>
       </ul>
     </div>
     <img :src="destination.db.photo" />
@@ -28,9 +41,13 @@ export default {
       englishName: this.destination.api.englishName,
       density: this.destination.api.density,
       gravity: this.destination.api.gravity,
+      escape: this.destination.api.escape,
+      diameter: Math.floor(this.destination.api.meanRadius * 2),
       discoveredBy: this.destination.api.discoveredBy,
       discoveryDate: this.destination.api.discoveryDate,
+      moonCount: this.destination.api.moons.length,
     };
+    console.log(this.moonCount);
   },
   computed: {
     description: function() {
@@ -42,6 +59,11 @@ export default {
     mythology: function() {
       if (this.destination.db) {
         return this.destination.db.mythology;
+      }
+    },
+    symbol: function() {
+      if (this.destination.db) {
+        return this.destination.db.symbol;
       }
     },
   },
@@ -72,7 +94,7 @@ img {
   margin: 20px;
 }
 
-span {
+.label {
   font-weight: bolder;
   font-style: italic;
   text-decoration: underline;

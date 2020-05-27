@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="journeyDisplay">
-    <p id="distance">Total distance traveled: {{ totalDistance | format_km }}.</p>
+    <h2 id="distance">You have travelled {{ totalDistance | format_km }}.</h2>
     <destination-details
       v-for="(destination, index) in journey"
       :key="index"
@@ -35,21 +35,20 @@ export default {
 
 <style>
 #journeyDisplay {
-  /* border: 20px solid red; */
   color: rgb(80, 69, 69);
   padding: 0;
   position: relative;
   bottom: 700px;
   z-index: 2;
   margin: 40px;
-  display: inline-flex;
-  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   list-style: none;
-  
 }
 
 #distance {
-    color: white;
+  color: white;
+  text-shadow: 4px 4px 3px #13131388;
 }
-
 </style>

@@ -29,7 +29,7 @@
 import JourneyForm from "@/components/JourneyForm.vue";
 import JourneyDisplay from "@/components/JourneyDisplay.vue";
 
-export default { 
+export default {
   name: "app",
   data: function() {
     return {
@@ -58,11 +58,9 @@ export default {
 </script>
 
 <style>
-
 #appbody {
-font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 
@@ -152,14 +150,14 @@ h1 {
 }
 
 .header {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   z-index: 1;
   position: relative;
   bottom: 680px;
   color: whitesmoke;
   text-align: center;
-  text-shadow: 4px 4px 3px #605b5b;
-  font-weight: bolder;  
+  text-shadow: 4px 4px 3px #13131388;
+  font-weight: bolder;
 }
 
 #journey-form {
@@ -169,4 +167,8 @@ h1 {
   text-align: center;
 }
 
+html,
+body {
+  background-attachment: fixed;
+}
 </style>
