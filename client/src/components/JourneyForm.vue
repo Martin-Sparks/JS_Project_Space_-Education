@@ -5,17 +5,15 @@
     </header>
 
     <div id="form">
-      <fuel-gauge :fuel="fuel"></fuel-gauge>
-      <form v-on:submit.prevent="handleSubmit" class="top-info" id="top-info">
-        
-        <label for="select">Select a destination: </label>
+      <fuel-gauge :fuel="fuel" id="gauge"></fuel-gauge>
+      <form v-on:submit.prevent="handleSubmit">
         <select id="select" v-model="selectedDestinationName">
+          <option value="" disabled>Select Destination</option>
           <option
             v-for="(destination, index) in filterPlanets"
             :key="index"
             :value="destination.englishName"
-            >{{ destination.englishName }}</option
-          >
+            >{{ destination.englishName }}</option>
         </select>
         <input class="btn" type="submit" value="Add to Journey" />
       </form>
@@ -91,8 +89,8 @@ export default {
     },
     fuelNeeded: function() {
       if (this.selectedDestination) {
-        // You can travel 100 million km on 1 unit of fuel
-        return Math.floor(this.distanceToDestination / 50000000);
+        // You can travel 40 million km on 1 unit of fuel
+        return Math.floor(this.distanceToDestination / 40000000);
       }
     },
   },
@@ -126,70 +124,31 @@ export default {
   align-items: center;
 }
 
-.top-info .background {
-  background-color: black;
-  opacity: 35%;
-}
-
-#top-info {
-  color: white;
-  opacity: 100%;
-  background-color: none;
-  display: inline-flex;
-  margin: 20px;
-}
-
-.info-box .background {
-  background-color: black;
-  opacity: 35%;
-}
-
 #info-box {
   color: white;
   opacity: 100%;
   background-color: none;
 }
 
-.btn {
-  display: inline-block;
-  padding: 20px 30px;
+select, input {
+  font-family: inherit;
+  font-size: 100%;
   background: var(--primary-color);
-  color: #fff;
+  opacity: 80%;
+  color: #ffffffbb;
   border-radius: 5px;
-  border: solid #fff 1px;
-  opacity: 30%;
-  position: relative;
-  bottom: 30px;
-  left: 20px;
+  border: solid #ffffffbb 1px;
   cursor: pointer;
-}
-
-#select {
-  position: relative;
-  display: inline-block;
-  background-color: black;
-  opacity: 30%;
-  min-width: 160px;
-  max-height: 40px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 10px 10px;
-  margin: -4px 5px 0px 10px;
-  border-radius: 5px;
-  /* z-index: 1; */
-}
-
-.fuel {
-  /* position: relative; */
-  /* display: inline-block; */
-  /* bottom: 80px; */
-  opacity: 70%;
-  height: 30px;
-  /* z-index: -1; */
+  height: 50px;
+  width: 180px;
+  margin: 20px;
+  text-align: center;
 }
 
 #banner {
   color: white;
   text-shadow: 4px 4px 3px #13131388;
+  margin: 10px;
 }
 
 header {
@@ -200,8 +159,12 @@ header {
 
 h1 {
   font-family: "Montserrat", sans-serif;
-  color: whitesmoke;
+  color: white;
   text-shadow: 4px 4px 3px #13131388;
   font-weight: bolder;
+}
+
+#gauge {
+  opacity: 70%;
 }
 </style>

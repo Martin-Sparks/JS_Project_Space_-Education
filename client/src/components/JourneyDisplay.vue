@@ -49,6 +49,7 @@ export default {
 
 #distance {
   color: white;
+  text-align: center;
   text-shadow: 4px 4px 3px #13131388;
 }
 </style>

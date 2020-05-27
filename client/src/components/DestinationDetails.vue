@@ -2,6 +2,7 @@
   <div id="info-box">
     <div id="text">
       <h2>{{ englishName }} - {{ symbol }}</h2>
+      <br>
       <ul>
         <li>
           <span class="label">Mean Diameter: </span>{{ diameter }} kilometers
@@ -22,9 +23,11 @@
         <li v-if="discoveryDate">
           <span class="label">Discovery Date: </span>{{ discoveryDate }}
         </li>
+        <br>
         <li v-if="description">
           <span class="label">Description: </span>{{ description }}
         </li>
+        <br>
         <li v-if="mythology">
           <span class="label">Mythology: </span>{{ mythology }}
         </li>
