@@ -52,7 +52,7 @@ export default {
 #info-box {
   border: 5px solid gray;
   display: flex;
-  background-color: #ffffff66;
+  background-color: #ffffff33;
   align-items: center;
   margin: 20px;
 }

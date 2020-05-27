@@ -24,9 +24,9 @@
       <div v-if="selectedDestination" class="info-box" id="info-box">
         <p>
           {{ selectedDestination.englishName }} is
-          {{ distanceToDestination | format_km }} away.
+          {{ distanceToDestination | format_km }} away. 
         </p>
-        <p>Learn more by taking a journey to visit this destination.</p>
+        <p> Learn more by taking a journey to visit this destination.</p>
       </div>
 
       <!-- <div id="photos-grid">
@@ -169,6 +169,7 @@ export default {
   position: relative;
   bottom: 30px;
   left: 20px;
+  cursor: pointer;
 }
 
 #select {

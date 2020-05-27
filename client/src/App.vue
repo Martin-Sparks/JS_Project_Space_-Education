@@ -119,8 +119,6 @@ h1 {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  /* background: var(--primary-color) url('./https://traversymedia.com/downloads/cover.jpg') no-repeat center
-		center/cover; */
   background-attachment: fixed;
 }
 
@@ -167,6 +165,8 @@ h1 {
   bottom: 680px;
   color: whitesmoke;
   text-align: center;
+  text-shadow: 4px 4px 3px #605b5b;
+  font-weight: bolder;  
 }
 
 #journey-form {
@@ -175,4 +175,5 @@ h1 {
   z-index: 1;
   text-align: center;
 }
+
 </style>
