@@ -10,7 +10,7 @@
         <li>
           <span class="label">Gravity: </span>{{ gravity }} m/s per second
         </li>
-        <li><span class="label">Escape: </span>{{ escape }} m/s per second</li>
+        <li><span class="label">Escape Velocity: </span>{{ escape }} Meters per second</li>
         <li>
           <span class="label">Density: </span>{{ density }} grams per cubic cm
         </li>
