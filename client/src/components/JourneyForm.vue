@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <h1>Journey Around the Solar System</h1>
+      <h1>Solar System Explorer</h1>
     </header>
 
     <div id="form">
@@ -43,7 +43,7 @@ export default {
     return {
       currentLocationName: "Earth",
       selectedDestinationName: "",
-      fuel: 1000,
+      fuel: 600,
     };
   },
   computed: {
